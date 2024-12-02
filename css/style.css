@@ -23,7 +23,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-    background-color: trasparent; /* Menú transparente */
+    background-color: transparent; /* Menú transparente */
     position: fixed;
     top: 0;
     width: 100%;
