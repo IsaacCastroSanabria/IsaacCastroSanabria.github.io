@@ -22,18 +22,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
-    background-color: transparent; /* Menú transparente */
-    position: fixed;
+    padding: 20px 30px; /* Ajusta el padding según sea necesario */
+    background-color: transparent;
+    position: absolute;
     top: 0;
     width: 100%;
     z-index: 10;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Logo a la izquierda */
 .logo {
-    margin-left: 20px;
+    margin-left: 250px; /* Ajusta el valor para mover más a la izquierda */
 }
 
 .logo img {
@@ -44,9 +43,8 @@ body {
 /* Contenedor para centrar el menú */
 .menu-wrapper {
     display: flex;
-    justify-content: center;
-    flex-grow: 1;
 }
+
 
 /* Menú centrado */
 nav {
@@ -58,14 +56,9 @@ nav {
 .menu {
     list-style-type: none;
     display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    margin-left: -125px;
-}
-
-.menu li {
-    position: relative;
-    margin-right: 30px;
+    justify-content: flex-end; /* Cambia a flex-end para mover a la derecha */
+    margin-right: 150px; /* Ajusta el margen derecho para separarlo del borde */
+    flex-grow: 1; /* Permite que el menú ocupe el espacio restante */
 }
 
 .menu li a {
@@ -73,8 +66,7 @@ nav {
     color: #fff;
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
-    padding: 15px 20px;
-    display: block;
+    padding: 10px 15px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
@@ -82,7 +74,6 @@ nav {
     color: #D4A017;
     border-bottom: 2px solid #D4A017;
 }
-
 /* Dropdown */
 .dropdown-content {
     display: none;
