@@ -22,22 +22,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px; /* Ajusta el padding según sea necesario */
+    padding: 50px 30px; /* Ajusta el padding según sea necesario */
     background-color: transparent;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 10;
-}
-
-/* Logo a la izquierda */
-.logo {
-    margin-left: 250px; /* Ajusta el valor para mover más a la izquierda */
-}
-
-.logo img {
-    height: 80px;
-    width: auto;
 }
 
 /* Contenedor para centrar el menú */
@@ -63,7 +53,7 @@ nav {
 
 .menu li a {
     text-decoration: none;
-    color: #fff;
+    color: #388E3C; /* Color 10 */
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
     padding: 10px 15px;
@@ -71,43 +61,49 @@ nav {
 }
 
 .menu li a:hover {
-    color: #D4A017;
-    border-bottom: 2px solid #D4A017;
+    color: #2C6B2F; /* Color 10 hover */
+    border-bottom: 2px solid #2C6B2F; /* Opción para un efecto hover con subrayado */
 }
-/* Dropdown */
+/* Dropdown principal */
+.dropdown {
+    position: relative; /* Asegura que el dropdown-content se posicione relativo a este contenedor */
+}
+
+/* Contenedor del dropdown */
 .dropdown-content {
     display: none;
     position: absolute;
+    top: 100%; /* Justo debajo del elemento padre */
+    left: 0; /* Alineado al lado izquierdo del padre */
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    list-style-type: none;
-    padding: 10px;
-    top: 100%;
-    left: 0;
     z-index: 10;
-    min-width: 150px;
-    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    margin-top: 1px;
+    min-width: 200px;
+    border-radius: 4px; /* Opcional, redondea los bordes */
 }
 
+/* Opciones dentro del dropdown */
 .dropdown-content li {
-    padding: 10px;
-    white-space: nowrap;
+    padding: 5px 10px;
+    list-style: none;
 }
 
 .dropdown-content li a {
     color: #fff;
-    padding: 10px 15px;
+    text-decoration: none;
     display: block;
 }
 
 .dropdown-content li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    color: #D4A017;
+    color: #388E3C;
 }
 
 /* Mostrar el dropdown al hacer hover */
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: block; /* Mostrar el menú desplegable */
 }
 
 /* Flecha de plegar/desplegar */
@@ -132,28 +128,87 @@ nav {
     transform: translateY(-50%) rotate(-90deg);
 }
 
-/* Estilos del título y párrafo en el centro */
+.header-container {
+    position: relative; /* Para superposición */
+    width: 100%;
+    height: 67vh; /* Ocupa toda la pantalla */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+}
+
+.header-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Se asegura de cubrir todo el contenedor */
+    object-fit: cover; /* La imagen se ajusta sin deformarse */
+    z-index: -1; /* Envía la imagen al fondo */
+}
+
 .centered-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
+    color: #1E3A5F; /* Cambia al color deseado */
 }
 
 .centered-text h1 {
-    font-size: 50px;
+    font-size: 3rem;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #1E3A5F; /* Cambia al color 10% */
 }
 
 .centered-text p {
-    font-size: 22px;
-    font-family: 'Roboto', sans-serif;
-    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #388E3C; /* Cambia al color 10 hover */
 }
+
+.responsive-logo {
+    display: block; /* Asegura que el logo sea un bloque separado */
+    margin: 0 auto; /* Centra el logo horizontalmente */
+    width: 120px; /* Ajusta dinámicamente entre 80px y 150px */
+    height: auto; /* Mantiene la proporción del logo */
+    transition: all 0.3s ease; /* Suaviza los cambios */
+    margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+    /* Ajustes para el texto centrado */
+    .centered-text h1 {
+        font-size: 2rem; /* Reduce el tamaño del título */
+    }
+
+    .centered-text p {
+        font-size: 1rem; /* Reduce el tamaño del subtítulo */
+    }
+
+    /* Ajuste del logo */
+    .logo img {
+        height: 60px; /* Reduce la altura del logo */
+        width: auto; /* Mantén las proporciones del logo */
+    }
+
+    /* Ajuste del menú */
+    .menu li a {
+        font-size: 16px; /* Reduce el tamaño del texto en el menú */
+        padding: 10px; /* Reduce el espaciado de los enlaces */
+    }
+
+    /* Espaciado general */
+    #menu-container {
+        padding: 15px 20px; /* Reduce el padding del contenedor del menú */
+    }
+
+    /* Reduce el espacio entre el logo y el texto */
+    .centered-text {
+        margin-top: 10px; /* Ajusta la separación superior del texto */
+    }
+}
+
 
 /* Animación de ocultar el menú */
 #menu-container.collapsed {

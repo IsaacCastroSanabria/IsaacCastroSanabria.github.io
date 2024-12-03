@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a Cronus ERP</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
 </head>
 <body>
     <header>
         <div id="menu-container">
-            <div class="logo">
-                <img src="./images/logo.png" alt="Logo">
-                <script src="./js/script.js"></script>
-            </div>
             <nav>
                 <ul class="menu">
-                    <li><a href="#">Wikis</a></li>
+                    <li class="dropdown">
+                        <a href="#">Cronus ERP</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#quienes-somos-link">¿Quiénes somos?</a></li>
+                            <li><a href="#que-hacemos-link">¿Qué hacemos?</a></li>
+                            <li><a href="#porque-nosotros-link">¿Por qué nosotros?</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </nav>
@@ -24,12 +28,11 @@
     </header>
     
     <div class="header-container">
-        <div class="header-columns">
-            <img src="./images/ComunasMenu.png" alt="Columnas estilizadas">
-        </div>
+        <img src="./images/ComunasMenu.png" alt="Columnas estilizadas" class="header-image">
         <div class="centered-text">
             <h1>Bienvenido a Mi Portafolio</h1>
             <p>Descubre cómo diseño y construyo soluciones de software.</p>
+            <img src="./images/logo.png" alt="Logo" class="responsive-logo">
         </div>
     </div>
     
