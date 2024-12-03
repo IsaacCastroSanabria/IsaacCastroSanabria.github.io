@@ -47,7 +47,7 @@ nav {
     list-style-type: none;
     display: flex;
     justify-content: flex-end; /* Cambia a flex-end para mover a la derecha */
-    margin-right: 135px; /* Ajusta el margen derecho para separarlo del borde */
+    margin-right: 40px; /* Ajusta el margen derecho para separarlo del borde */
     flex-grow: 1; /* Permite que el menú ocupe el espacio restante */
 }
 
@@ -176,6 +176,26 @@ nav {
     margin-top: 20px;
 }
 
+
+/* Media query para ajustar la posición vertical */
+@media (max-height: 600px) {
+    .centered-text {
+        top: 50%; /* Baja el texto un poco para evitar colisiones */
+    }
+    .responsive-logo {
+        width: 90px; /* Ajusta dinámicamente entre 80px y 150px */
+    }
+}
+
+@media (max-height: 500px) {
+    .centered-text {
+        top: 60%; /* Baja más el texto si la pantalla es muy pequeña */
+    }
+    .responsive-logo {
+        width: 40px; /* Ajusta dinámicamente entre 80px y 150px */
+    }
+    
+}
 
 @media (max-width: 1300px) and (min-width: 1101px) {
     .centered-text h1 {
