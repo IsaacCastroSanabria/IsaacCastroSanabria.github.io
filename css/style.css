@@ -47,7 +47,7 @@ nav {
     list-style-type: none;
     display: flex;
     justify-content: flex-end; /* Cambia a flex-end para mover a la derecha */
-    margin-right: 150px; /* Ajusta el margen derecho para separarlo del borde */
+    margin-right: 135px; /* Ajusta el margen derecho para separarlo del borde */
     flex-grow: 1; /* Permite que el menú ocupe el espacio restante */
 }
 
