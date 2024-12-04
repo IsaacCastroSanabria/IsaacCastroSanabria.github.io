@@ -17,17 +17,24 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Estilo para los títulos */
+h1, h2 {
+    font-family: 'Montserrat', sans-serif; /* Tipografía para títulos */
+    font-weight: bold; /* Asegúrate de mantenerlos destacados */
+}
+
 /* Contenedor del menú y logo */
 #menu-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 30px; /* Ajusta el padding según sea necesario */
-    background-color: transparent;
-    position: absolute;
+    padding: 30px;
+    background-color: trasparent; /* Menú transparente */
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Contenedor para centrar el menú */
@@ -46,8 +53,8 @@ nav {
 .menu {
     list-style-type: none;
     display: flex;
-    justify-content: flex-end; /* Cambia a flex-end para mover a la derecha */
-    margin-right: 40px; /* Ajusta el margen derecho para separarlo del borde */
+    justify-content: center; /* Cambia a flex-end para mover a la derecha */
+    gap: 10; /* Ajusta el margen derecho para separarlo del borde */
     flex-grow: 1; /* Permite que el menú ocupe el espacio restante */
 }
 
@@ -110,7 +117,7 @@ nav {
 #toggle-menu {
     position: fixed;
     right: 10px;
-    top: 50px;
+    top: 40px;
     cursor: pointer;
     z-index: 1000;
     transform: translateY(-50%) rotate(90deg);
@@ -120,7 +127,7 @@ nav {
 #toggle-menu svg {
     width: 20px;
     height: 20px;
-    fill: #fff;
+    fill: #388E3C;
 }
 
 /* Cuando el menú esté colapsado, rotar la flecha hacia la izquierda */
