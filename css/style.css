@@ -536,10 +536,46 @@ nav {
     border-radius: 10px;
 }
 
-.quienes-somos-text p {
-    margin-bottom: 15px; /* Ajusta este valor según el espacio que desees */
+
+/* Aumentar el espacio entre títulos (h2, h3) y los textos */
+.quienes-somos-text h2 {
+    font-size: 24px !important; /* Reducir el tamaño del título */
+    margin-bottom: 20px !important; /* Aumentar espacio debajo del título */
 }
 
+.quienes-somos-text h3 {
+    font-size: 20px !important; /* Reducir el tamaño del subtítulo */
+    margin-bottom: 15px !important; /* Aumentar espacio debajo del subtítulo */
+}
+
+.quienes-somos-text p {
+    font-size: 17px !important; /* Reducir el tamaño del texto */
+    margin-bottom: 20px !important; /* Aumentar espacio entre párrafos */
+    line-height: 1.8 !important; /* Aumentar espaciado entre líneas */
+    text-align: justify !important; /* Justificar el texto */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center; /* Centra los elementos */
+        padding: 20px; /* Reduce el padding */
+    }
+
+    .quienes-somos .texto {
+        width: 100%; /* El texto ocupa todo el ancho */
+        padding-right: 0; /* Elimina el padding derecho */
+    }
+
+    .quienes-somos .imagen {
+        margin-top: 20px; /* Añade un margen para separar la imagen del texto */
+    }
+
+    .quienes-somos .imagen img {
+        max-width: 90%; /* Ajusta el tamaño de la imagen */
+    }
+}
 
 /* Section: Qué Hacemos */
 .que-hacemos {
@@ -709,3 +745,32 @@ nav {
     font-size: 20px;
     color: #666;
 }
+
+#contact-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Botones en columna */
+    gap: 10px; /* Espacio entre botones */
+    z-index: 1000;
+  }
+  
+  #contact-buttons div {
+    width: 50px;
+    height: 50px;
+  }
+  
+  #contact-buttons img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Hace los botones circulares */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #contact-buttons img:hover {
+    transform: scale(1.1); /* Agranda un poco el botón al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
