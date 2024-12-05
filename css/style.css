@@ -536,20 +536,21 @@ nav {
     border-radius: 10px;
 }
 
-
-/* Aumentar el espacio entre títulos (h2, h3) y los textos */
 .quienes-somos-text h2 {
     font-size: 24px !important; /* Reducir el tamaño del título */
-    margin-bottom: 20px !important; /* Aumentar espacio debajo del título */
+    margin-top: 30px !important; /* Aumentar espacio encima del título */
+    margin-bottom: 30px !important; /* Aumentar espacio debajo del título */
 }
 
 .quienes-somos-text h3 {
     font-size: 20px !important; /* Reducir el tamaño del subtítulo */
-    margin-bottom: 15px !important; /* Aumentar espacio debajo del subtítulo */
+    margin-top: 20px !important; /* Aumentar espacio encima del subtítulo */
+    margin-bottom: 20px !important; /* Aumentar espacio debajo del subtítulo */
 }
 
 .quienes-somos-text p {
     font-size: 17px !important; /* Reducir el tamaño del texto */
+    margin-top: 10px !important; /* Espaciado extra entre párrafos */
     margin-bottom: 20px !important; /* Aumentar espacio entre párrafos */
     line-height: 1.8 !important; /* Aumentar espaciado entre líneas */
     text-align: justify !important; /* Justificar el texto */
@@ -596,65 +597,8 @@ nav {
 }
 
 .que-hacemos .imagen img {
-    max-width: 100%;
+    max-width: 45%;
     border-radius: 10px;
-}
-
-/* Section: Por Qué Nosotros */
-.porque-nosotros {
-    background-color: #d1d4d6;
-    color: #000;
-    padding: 50px 0;
-    text-align: center;
-}
-
-.porque-nosotros h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    text-align: center; /* Centra el título */
-}
-
-/* Estilos para las columnas de texto */
-.porque-nosotros .container {
-    display: flex;
-    justify-content: center;
-    gap: 40px; /* Espacio entre las columnas */
-    flex-wrap: wrap; /* Permite ajuste en pantallas más pequeñas */
-}
-
-.porque-nosotros .columna {
-    flex: 1;
-    max-width: 45%; /* Ajusta el ancho de las columnas */
-    text-align: left; /* Texto alineado a la izquierda dentro de la columna */
-    display: flex;
-    flex-direction: column; /* Para mantener el flujo de contenido en columna */
-    justify-content: space-between; /* Para distribuir el contenido de manera uniforme en la columna */
-}
-
-.porque-nosotros p {
-    font-size: 20px; /* Tamaño del texto */
-    line-height: 1.8;
-    color: #555; /* Color del texto */
-}
-
-/* Estilos de títulos para Quiénes Somos, Qué Hacemos, y Por Qué Nosotros */
-.quienes-somos h2, 
-.que-hacemos h2, 
-.porque-nosotros h2 {
-    font-size: 36px; /* Tamaño ajustado para títulos */
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #000; /* Color negro para títulos */
-    margin-bottom: 25px; /* Ajusta este valor según el espacio deseado */
-}
-
-/* Estilos de los párrafos */
-.quienes-somos p, 
-.que-hacemos p, 
-.porque-nosotros p {
-    font-size: 20px; /* Tamaño aumentado para los párrafos */
-    line-height: 1.8; /* Espaciado mayor entre líneas */
-    color: #555; /* Color gris para párrafos */
 }
 
 /* Ajustar el contenedor de la imagen */
@@ -695,57 +639,6 @@ nav {
     color: #555;
 }
 
-.equipo-cronus {
-    text-align: center;
-    padding: 50px 0;
-    background-color: #d1d4d6;
-}
-
-.equipo-cronus h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.equipo-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin: 0 auto;
-}
-
-.equipo-item {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%; /* Ocupa el 90% del espacio de la columna */
-    margin: 0 auto; /* Centra el item en su columna */
-}
-
-.equipo-img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    object-fit: cover;
-}
-
-.equipo-item h3 {
-    font-size: 36px;
-    margin: 10px 0;
-    color: #333;
-}
-
-.equipo-item p {
-    font-size: 20px;
-    color: #666;
-}
-
 #contact-buttons {
     position: fixed;
     bottom: 20px;
@@ -754,23 +647,22 @@ nav {
     flex-direction: column; /* Botones en columna */
     gap: 10px; /* Espacio entre botones */
     z-index: 1000;
-  }
-  
-  #contact-buttons div {
+}
+
+#contact-buttons div {
     width: 50px;
     height: 50px;
-  }
-  
-  #contact-buttons img {
+}
+
+#contact-buttons img {
     width: 100%;
     height: 100%;
     border-radius: 50%; /* Hace los botones circulares */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade sombra */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  #contact-buttons img:hover {
+}
+
+#contact-buttons img:hover {
     transform: scale(1.1); /* Agranda un poco el botón al pasar el mouse */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  }
-  
+}

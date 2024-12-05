@@ -58,3 +58,11 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(section);
     });
 });
+
+document.querySelector('#scrolltop-button a').addEventListener('click', function (e) {
+    e.preventDefault(); // Evita el cambio de enlace
+    window.scrollBy({
+        top: -window.innerHeight, // Sube una altura de pantalla
+        behavior: 'smooth', // Transición suave
+    });
+});
