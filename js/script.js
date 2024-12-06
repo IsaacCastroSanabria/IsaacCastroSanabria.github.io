@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Lógica del slider
     let operacion = 0,
         counter = 0,
-        widthImg = 70 / sliderSection.length;
+        widthImg = 50 / sliderSection.length;
 
     function moveToRight() {
         if (counter >= sliderSection.length - 1) {
