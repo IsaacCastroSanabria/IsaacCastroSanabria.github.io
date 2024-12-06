@@ -1,25 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Variables existentes
     let lastScrollTop = 0;
     let isManuallyToggled = false; // Para controlar si se ha presionado el botón
     const menuContainer = document.getElementById('menu-container');
     const toggleButton = document.getElementById('toggle-menu');
+    const sections = document.querySelectorAll('.content-section');
 
+    // Nuevas variables para el slider
+    const btnLeft = document.querySelector(".btn-left"),
+          btnRight = document.querySelector(".btn-right"),
+          slider = document.querySelector("#slider"),
+          sliderSection = document.querySelectorAll(".slider-section");
+    
     // Detectar el scroll
     window.addEventListener('scroll', function () {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Si no se ha ocultado manualmente y el scroll es hacia abajo, ocultamos el menú
         if (!isManuallyToggled && scrollTop > lastScrollTop && scrollTop > 100) {
             menuContainer.classList.add('collapsed'); // Ocultar menú
             toggleButton.style.transform = 'translateY(-50%) rotate(-90deg)'; // Rotar flecha a la izquierda
-        } 
-        // Si el scroll es hacia arriba, mostramos el menú
-        else if (!isManuallyToggled && scrollTop < lastScrollTop) {
+        } else if (!isManuallyToggled && scrollTop < lastScrollTop) {
             menuContainer.classList.remove('collapsed'); // Mostrar menú
             toggleButton.style.transform = 'translateY(-50%) rotate(90deg)'; // Rotar flecha a la derecha
         }
 
-        // Si no está en la parte superior, añadir fondo opaco al menú
         if (scrollTop > 100) {
             menuContainer.classList.add('menu-background');
         } else {
@@ -29,23 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         lastScrollTop = scrollTop;
     });
 
-    // Función para alternar el menú cuando el botón de la flecha se presiona
-    toggleButton.addEventListener('click', function () {
-        isManuallyToggled = !isManuallyToggled; // Cambia el estado manual
-
-        if (menuContainer.classList.contains('collapsed')) {
-            menuContainer.classList.remove('collapsed');
-            toggleButton.style.transform = 'translateY(-50%) rotate(90deg)'; // Flecha a la derecha
-        } else {
-            menuContainer.classList.add('collapsed');
-            toggleButton.style.transform = 'translateY(-50%) rotate(-90deg)'; // Flecha a la izquierda
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('.content-section');
-
+    // Observador de secciones
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -57,12 +45,43 @@ document.addEventListener('DOMContentLoaded', function () {
     sections.forEach(section => {
         observer.observe(section);
     });
-});
 
-document.querySelector('#scrolltop-button a').addEventListener('click', function (e) {
-    e.preventDefault(); // Evita el cambio de enlace
-    window.scrollBy({
-        top: -window.innerHeight, // Sube una altura de pantalla
-        behavior: 'smooth', // Transición suave
-    });
+    // Controladores del slider
+    btnLeft.addEventListener("click", e => moveToLeft());
+    btnRight.addEventListener("click", e => moveToRight());
+
+
+
+    // Lógica del slider
+    let operacion = 0,
+        counter = 0,
+        widthImg = 70 / sliderSection.length;
+
+    function moveToRight() {
+        if (counter >= sliderSection.length - 1) {
+            counter = 0;
+            operacion = 0;
+            slider.style.transform = `translate(-${operacion}%)`;
+            slider.style.transition = "none";
+            return;
+        }
+        counter++;
+        operacion = operacion + widthImg;
+        slider.style.transform = `translate(-${operacion}%)`;
+        slider.style.transition = "all ease .6s";
+    }
+
+    function moveToLeft() {
+        counter--;
+        if (counter < 0) {
+            counter = sliderSection.length - 1;
+            operacion = widthImg * (sliderSection.length - 1);
+            slider.style.transform = `translate(-${operacion}%)`;
+            slider.style.transition = "none";
+            return;
+        }
+        operacion = operacion - widthImg;
+        slider.style.transform = `translate(-${operacion}%)`;
+        slider.style.transition = "all ease .6s";
+    }
 });

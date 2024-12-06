@@ -666,3 +666,132 @@ nav {
     transform: scale(1.1); /* Agranda un poco el botón al pasar el mouse */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+.container-carousel {
+    position: relative;
+    width: 1200px;
+    height: 800px;
+    background-color: #e0e0e0;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.66);
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0 auto; /* Centra horizontalmente */
+    justify-content: center;
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Media queries */
+@media (max-width: 1300px) {
+    .container-carousel {
+        width: 1000px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .container-carousel {
+        width: 800px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container-carousel {
+        width: 800px;
+    }
+}
+
+@media (max-width: 700px) {
+    .container-carousel {
+        width: 600px;
+    }
+}
+
+.carruseles {
+    width: 1000%;
+    height: 100%;
+    display: flex;
+
+}
+
+.slider-section {
+    width: calc(100% / 10);
+    height: 100%;
+}
+
+.slider-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.btn-left,
+.btn-right {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    font-size: 1.5rem;
+    background-color: black;
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff81;
+    transform: translate(0,-50%);
+    transition: .5s ease;
+    user-select: none;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+    background-color: #333333d4;
+    color: #fff;
+}
+
+.btn-left {
+    left: 10px;
+}
+
+.btn-right {
+    right: 10px;
+}
+
+.imagen {
+    display: flex; /* Utilizamos flexbox */
+    flex-direction: column; /* Hace que los elementos hijos (imágenes) se apilen verticalmente */
+    align-items: center; /* Centra las imágenes horizontalmente */
+}
+
+.imagen img {
+    width: 60%; /* Aumenta el tamaño al 60% del contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    object-fit: cover; /* Asegura que la imagen se ajuste al contenedor */
+    margin-left: 100px; /* Empuja la imagen hacia la derecha */
+    display: block; /* Asegura que la imagen sea un bloque para aplicar margen */
+}
+
+
+.visible-title {
+    display: flex;
+    flex-direction: column; /* Ordena los elementos en columna */
+    align-items: center; /* Opcional: centra horizontalmente */
+    padding-top: 30px;
+    padding-bottom: -20px;
+}
+
+@media (max-width: 1300px) {
+    .imagen img {
+        width: 70%; /* Reduce un poco el tamaño en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 900px) {
+    .imagen img {
+        width: 80%; /* Se adapta para pantallas aún más pequeñas */
+    }
+}
+
+@media (max-width: 600px) {
+    .imagen img {
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+}
