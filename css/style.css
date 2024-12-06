@@ -433,76 +433,20 @@ nav {
 
 /* Estilos del footer */
 .footer {
-    background-color: #111;
-    color: #fff;
-    padding: 40px 0;
-}
-
-/* Footer Top */
-.footer-top {
-    display: flex;
-    justify-content: space-around;
-    padding-bottom: 20px;
-}
-
-.footer-column {
-    flex: 1;
-    text-align: center;
-}
-
-.footer-column h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-column ul li {
-    margin-bottom: 10px;
-}
-
-.footer-column ul li a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.footer-column ul li a:hover {
-    color: #fff;
-    text-decoration: underline;
+    background-color: #1E3A5F;
+    color: #388E3C;
+    padding: 20px 0; /* Espaciado superior e inferior */
+    text-align: center; /* Centra todos los elementos dentro del footer */
 }
 
 /* Footer Middle */
 .footer-middle {
-    text-align: center;
-    margin: 20px 0;
+    margin: 20px 0; /* Espaciado entre los elementos */
 }
 
 .footer-middle .footer-logo img {
-    height: 60px;
-    margin-bottom: 10px;
-}
-
-.footer-middle p {
-    font-size: 18px;
-    color: #ccc;
-}
-
-/* Footer Bottom */
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-}
-
-.footer-bottom p {
-    margin: 0;
-    font-size: 16px;
-    color: #ccc;
+    height: 150px; /* Tamaño del logo */
+    margin-bottom: 30px; /* Espaciado entre el logo y el slogan */
 }
 
 /* General styles */
@@ -794,4 +738,195 @@ nav {
     .imagen img {
         width: 100%; /* Ocupa todo el ancho disponible */
     }
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de cierre del modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Botones y entradas */
+.btn {
+    background-color: #388E3C; /* Color primario */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2C6B2F; /* Color hover */
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Contenedor del switch */
+.language-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Estilo del switch */
+.switchLenguaje {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switchLenguaje input {
+    display: none;
+}
+
+.sliderLenguaje {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.sliderLenguaje:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* Color al activar */
+input:checked + .sliderLenguaje {
+    background-color: #388E3C; /* Color 10 */
+}
+
+input:checked + .sliderLenguaje:before {
+    transform: translateX(26px);
+}
+
+/* Separacion de codigos */
+
+/* Contenedor del switch de lenguaje */
+.language-switch-menu {
+    margin-left: auto; /* Empuja el switch a la derecha */
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    gap: 5px; /* Espacio entre el switch y las etiquetas */
+}
+
+/* Estilo para las etiquetas del idioma */
+.lang-label {
+    font-family: 'Montserrat', sans-serif; /* Usa la fuente del menú */
+    font-size: 16px; /* Tamaño similar al menú */
+    font-weight: bold;
+    color: #388E3C; /* Color de los textos */
+}
+
+/* Opciones para alinear las etiquetas según el lado */
+.lang-left {
+    margin-right: 5px; /* Espacio a la derecha de la etiqueta izquierda */
+}
+
+.lang-right {
+    margin-left: 5px; /* Espacio a la izquierda de la etiqueta derecha */
+}
+
+/* Switch de lenguaje */
+.switchLenguaje {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switchLenguaje input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.sliderLenguaje {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.sliderLenguaje:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .sliderLenguaje {
+    background-color: #388E3C;
+}
+
+input:checked + .sliderLenguaje:before {
+    transform: translateX(24px);
 }

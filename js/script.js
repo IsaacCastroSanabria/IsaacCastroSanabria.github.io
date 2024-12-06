@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('toggle-menu');
     const sections = document.querySelectorAll('.content-section');
 
+    const openModalBtn = document.getElementById('openModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modal = document.getElementById('contactModal');
+
+    var check = document.querySelector(".check");
+    
     // Nuevas variables para el slider
     const btnLeft = document.querySelector(".btn-left"),
           btnRight = document.querySelector(".btn-right"),
@@ -50,7 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
     btnLeft.addEventListener("click", e => moveToLeft());
     btnRight.addEventListener("click", e => moveToRight());
 
-
+    setInterval(() => {
+        moveToRight()
+    }, 6000);
 
     // Lógica del slider
     let operacion = 0,
@@ -84,4 +92,40 @@ document.addEventListener('DOMContentLoaded', function () {
         slider.style.transform = `translate(-${operacion}%)`;
         slider.style.transition = "all ease .6s";
     }
+
+    // Evento para abrir el modal
+    openModalBtn.addEventListener('click', function () {
+        modal.style.display = 'block';
+    });
+
+    // Evento para cerrar el modal
+    closeModalBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    // Cerrar el modal haciendo clic fuera del contenido
+    window.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    const currentPath = window.location.pathname;
+
+    // Configura el estado del switch según el archivo actual
+    if (currentPath.includes('indexIngles.html')) {
+        check.checked = true; // Si estás en la versión en inglés, activa el switch
+    } else {
+        check.checked = false; // Si estás en la versión en español, desactiva el switch
+    }
+
+    // Cambia entre idiomas al interactuar con el switch
+    check.addEventListener('click', function () {
+        if (check.checked) {
+            location.href = 'indexIngles.html'; // Cambia a la versión en inglés
+        } else {
+            location.href = 'index.html'; // Cambia a la versión en español
+        }
+    });
+
 });

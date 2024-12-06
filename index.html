@@ -21,23 +21,27 @@
                             <li><a href="#porque-nosotros-link">¿Por qué elegirme?</a></li>
                         </ul>
                     </li>
-                    
+                    <li><a href="#" id="openModal">Contáctame</a></li>
                     
                     <li>
                         <a href="./pdf/IsaacCastroSanabria_CV-Ingles-Espanol.pdf" download="Isaac_Castro_CV">Descargar CV</a>
                     </li>
+
+                    <div class="language-switch-menu">
+                        <span class="lang-label lang-left">E</span>
+                        <label class="switchLenguaje">
+                            <input type="checkbox" class="check">
+                            <span class="sliderLenguaje round"></span>
+                        </label>
+                        <span class="lang-label lang-right">I</span>
+                    </div>            
+
                 </ul>
             </nav>
         </div>
-    
-        <div id="toggle-menu" onclick="toggleMenu()">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 21l-12-18h24z" />
-            </svg>
-        </div>
 
     </header>
-    
+
     <div class="header-container">
         <img src="./images/ComunasMenu.png" alt="Columnas estilizadas" class="header-image">
         <div class="centered-text">
@@ -46,7 +50,7 @@
             <img src="./images/logo.png" alt="Logo" class="responsive-logo">
         </div>
     </div>
-    
+
 <section style="padding: 50px; background-color: #f5f5f5; color: white;">
     <div class="content-section animate-in-up">
         <div class="values-container">
@@ -331,35 +335,35 @@
             </a>
         </div>
     </div>
-      
+
+<!-- Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2>Formulario de Contacto</h2>
+        <form action="https://formsubmit.co/icastros@ucenfotec.ac.cr" method="POST">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </div>
+</div>
+
+
 
 <footer class="footer">
-    <div class="footer-top">
-        <div class="footer-column">
-            <h3>Seguridad & Soporte</h3>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/isaac-felipe-castro-sanabria/" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/IsaacCastroSanabria" target="_blank">GitHub</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>Sobre el Producto</h3>
-            <ul>
-                <li><a href="#">Wikis</a></li>
-                <li><a href="#">Control de Versiones</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>Contacto</h3>
-            <ul>
-                <li><a href="#">Formulario de Contacto</a></li>
-            </ul>
-        </div>
-    </div>
     <div class="footer-middle">
         <div class="footer-logo">
             <img src="./images/logo.png" alt="Logo">
         </div>
+        <h2 class="footer-slogan">Entendemos, resolvemos, simplificamos</h2>
     </div>
 </footer>
 </body>
